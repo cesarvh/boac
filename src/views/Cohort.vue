@@ -18,7 +18,6 @@
         <FilterRow v-if="isOwnedByCurrentUser" />
         <ApplyAndSaveButtons v-if="isOwnedByCurrentUser" />
       </b-collapse>
-      <hr class="filters-section-separator mr-2 mt-0" />
       <SectionSpinner :loading="editMode === 'apply'" />
       <div v-if="!showHistory && showStudentsSection">
         <div class="cohort-column-results">
@@ -37,11 +36,12 @@
               :students="students"
             />
             <div class="pt-1">
+              <hr v-if="showSortBy" class="filters-section-separator mr-2 mt-0" />
               <SortBy v-if="showSortBy" :domain="domain" />
             </div>
           </div>
           <div v-if="totalStudentCount > pagination.itemsPerPage">
-            <hr class="filters-section-separator mr-3" />
+            <hrjjj class="filters-section-separator mr-3" />
             <div class="mt-3">
               <Pagination
                 :click-handler="goToPage"
