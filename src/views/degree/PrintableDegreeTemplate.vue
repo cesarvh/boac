@@ -100,7 +100,7 @@
                     :position="position"
                   />
                   <div v-if="$_.size(category.courseRequirements)" class="pl-1 py-2">
-                    <CoursesTable
+                    <PrintableCoursesTable
                       :items="category.courseRequirements"
                       :parent-category="category"
                       :position="position"
@@ -114,7 +114,7 @@
                         :position="position"
                       />
                       <div v-if="$_.size(subcategory.courseRequirements)" class="pl-1 py-2">
-                        <CoursesTable
+                        <PrintableCoursesTable
                           :items="subcategory.courseRequirements"
                           :parent-category="subcategory"
                           :position="position"
@@ -144,7 +144,7 @@
 <script>
 import Category from '@/components/degree/Category.vue'
 import Context from '@/mixins/Context'
-import CoursesTable from '@/components/degree/CoursesTable.vue'
+import PrintableCoursesTable from '@/components/degree/PrintableCoursesTable.vue'
 import Loading from '@/mixins/Loading'
 import Spinner from '@/components/util/Spinner'
 import store from '@/store'
@@ -156,7 +156,7 @@ export default {
   name: 'PrintableDegreeTemplate',
   components: {
     Spinner,
-    CoursesTable,
+    PrintableCoursesTable,
     Category
   },
   mixins: [Context, Loading, Util],
